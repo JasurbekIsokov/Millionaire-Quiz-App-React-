@@ -9,8 +9,46 @@
   width: 75%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #020230),
     url(./assets/bg.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .pyramid {
   width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.moneyList {
+  list-style: none;
+  width: 100%;
+  padding: 20px;
+}
+
+.moneyListItem {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.moneyListItem.active {
+  background-color: teal;
+}
+
+.moneyListItem {
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.moneyListNumber {
+  font-size: 18px;
+  font-weight: 100;
+  width: 30%;
+}
+
+.moneyListAmount {
+  font-size: 20px;
+  font-weight: 300;
 }
