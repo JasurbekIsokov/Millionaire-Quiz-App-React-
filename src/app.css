@@ -42,13 +42,14 @@
   font-weight: 100;
 }
 
-.moneyListNumber {
+.moneyListItemNumber {
   font-size: 18px;
   font-weight: 100;
   width: 30%;
+  margin-right: 20px;
 }
 
-.moneyListAmount {
+.moneyListItemAmount {
   font-size: 20px;
   font-weight: 300;
 }
