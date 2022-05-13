@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./app.css";
 
+import Trivia from "./components/Trivia";
+
 const App = () => {
   const [questionNumber, question] = useState(1);
   const moneyPyramid = [
@@ -27,13 +29,16 @@ const App = () => {
         <div className="top">
           <div className="timer">30</div>
         </div>
-        <div className="bottom">question and answer</div>
+        <div className="bottom">
+          <Trivia />
+        </div>
       </div>
       <div className="pyramid">
         <ul className="moneyList">
           {moneyPyramid
             .map((n) => (
               <li
+                key={n.id}
                 className={
                   questionNumber === n.id
                     ? "moneyListItem active"
