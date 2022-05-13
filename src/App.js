@@ -4,7 +4,32 @@ import "./app.css";
 import Trivia from "./components/Trivia";
 
 const App = () => {
-  const [questionNumber, question] = useState(1);
+  const [questionNumber, setQuestionNumber] = useState(1);
+  const [timeOut, setTimeOut] = useState(false);
+
+  const data = [
+    {
+      id: 1,
+      question: "Savol 1",
+      answers: [
+        { text: "Javob a", correct: true },
+        { text: "Javob b", correct: false },
+        { text: "Javob c", correct: false },
+        { text: "Javob d", correct: false },
+      ],
+    },
+    {
+      id: 2,
+      question: "Savol 2",
+      answers: [
+        { text: "Javob a", correct: false },
+        { text: "Javob b", correct: true },
+        { text: "Javob c", correct: false },
+        { text: "Javob d", correct: false },
+      ],
+    },
+  ];
+
   const moneyPyramid = [
     { id: 1, amount: "$100" },
     { id: 2, amount: "$200" },
@@ -30,7 +55,12 @@ const App = () => {
           <div className="timer">30</div>
         </div>
         <div className="bottom">
-          <Trivia />
+          <Trivia
+            data={data}
+            setTimeOut={setTimeOut}
+            questionNumber={questionNumber}
+            setQuestionNumber={setQuestionNumber}
+          />
         </div>
       </div>
       <div className="pyramid">
