@@ -27,9 +27,139 @@ const App = () => {
       question: "Savol 2",
       answers: [
         { text: "Javob a", correct: false },
-        { text: "Javob b", correct: true },
+        { text: "Javob b", correct: false },
         { text: "Javob c", correct: false },
-        { text: "Javob d", correct: false },
+        { text: "Javob d", correct: true },
+      ],
+    },
+    {
+      id: 3,
+      question: "Savol 3",
+      answers: [
+        { text: "Javob a", correct: false },
+        { text: "Javob b", correct: false },
+        { text: "Javob c", correct: false },
+        { text: "Javob d", correct: true },
+      ],
+    },
+    {
+      id: 4,
+      question: "Savol 4",
+      answers: [
+        { text: "Javob a", correct: false },
+        { text: "Javob b", correct: false },
+        { text: "Javob c", correct: false },
+        { text: "Javob d", correct: true },
+      ],
+    },
+    {
+      id: 5,
+      question: "Savol 5",
+      answers: [
+        { text: "Javob a", correct: false },
+        { text: "Javob b", correct: false },
+        { text: "Javob c", correct: false },
+        { text: "Javob d", correct: true },
+      ],
+    },
+    {
+      id: 6,
+      question: "Savol 6",
+      answers: [
+        { text: "Javob a", correct: false },
+        { text: "Javob b", correct: false },
+        { text: "Javob c", correct: false },
+        { text: "Javob d", correct: true },
+      ],
+    },
+    {
+      id: 7,
+      question: "Savol 1",
+      answers: [
+        { text: "Javob a", correct: false },
+        { text: "Javob b", correct: false },
+        { text: "Javob c", correct: false },
+        { text: "Javob d", correct: true },
+      ],
+    },
+    {
+      id: 8,
+      question: "Savol 2",
+      answers: [
+        { text: "Javob a", correct: false },
+        { text: "Javob b", correct: false },
+        { text: "Javob c", correct: false },
+        { text: "Javob d", correct: true },
+      ],
+    },
+    {
+      id: 9,
+      question: "Savol 1",
+      answers: [
+        { text: "Javob a", correct: false },
+        { text: "Javob b", correct: false },
+        { text: "Javob c", correct: false },
+        { text: "Javob d", correct: true },
+      ],
+    },
+    {
+      id: 10,
+      question: "Savol 2",
+      answers: [
+        { text: "Javob a", correct: false },
+        { text: "Javob b", correct: false },
+        { text: "Javob c", correct: false },
+        { text: "Javob d", correct: true },
+      ],
+    },
+    {
+      id: 11,
+      question: "Savol 1",
+      answers: [
+        { text: "Javob a", correct: false },
+        { text: "Javob b", correct: false },
+        { text: "Javob c", correct: false },
+        { text: "Javob d", correct: true },
+      ],
+    },
+    {
+      id: 12,
+      question: "Savol 2",
+      answers: [
+        { text: "Javob a", correct: false },
+        { text: "Javob b", correct: false },
+        { text: "Javob c", correct: false },
+        { text: "Javob d", correct: true },
+      ],
+    },
+    {
+      id: 13,
+      question: "Savol 2",
+      answers: [
+        { text: "Javob a", correct: false },
+        { text: "Javob b", correct: false },
+        { text: "Javob c", correct: false },
+        { text: "Javob d", correct: true },
+      ],
+    },
+    {
+      id: 14,
+      question: "Savol 2",
+      answers: [
+        { text: "Javob a", correct: false },
+        { text: "Javob b", correct: false },
+        { text: "Javob c", correct: false },
+        { text: "Javob d", correct: true },
+      ],
+    },
+    {
+      id: 15,
+      question: "Savol 2",
+      answers: [
+        { text: "Javob a", correct: false },
+        { text: "Javob b", correct: false },
+        { text: "Javob c", correct: false },
+        { text: "Javob d", correct: true },
       ],
     },
   ];
@@ -50,6 +180,7 @@ const App = () => {
     { id: 13, amount: "$250000" },
     { id: 14, amount: "$500000" },
     { id: 15, amount: "$1000000" },
+    { id: "", amount: "Victory" },
   ]);
 
   useEffect(() => {
