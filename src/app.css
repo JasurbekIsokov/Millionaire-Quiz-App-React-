@@ -59,13 +59,14 @@
 }
 
 .answers {
-  width: 87%;
-  display: flex;
-  justify-content: space-around;
+  width: 90%;
+  display: grid;
+  grid-template-columns: auto auto;
+  /* justify-content: space-around; */
 }
 
 .answer {
-  width: 100%;
+  width: 90%;
   padding: 12px;
   text-align: center;
   background: linear-gradient(#0e0124, #22074d);
