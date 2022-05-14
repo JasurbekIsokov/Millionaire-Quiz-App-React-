@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import useSound from "use-sound"; // sound(musiqani ovozini chiqaradi )
 import play from "../assets/play.wav";
 import correct from "../assets/correct.wav";
-import wrong from "../assets/play.wav";
+import wrong from "../assets/wrong.wav";
 
 export default function Trivia({
   data,
@@ -66,8 +66,9 @@ export default function Trivia({
       <div className="question">{question?.question}</div>
       <div className="answers ">
         {/* Savollarni mapd aaylanib so'ng ularni ekranga chiqaradi */}
-        {question?.answers.map((a) => (
+        {question?.answers.map((a, index) => (
           <div
+            key={index}
             className={selectedAnswer === a ? className : "answer"}
             onClick={() => handkeClick(a)}
           >

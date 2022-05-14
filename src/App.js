@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import axios from "axios";
 import "./app.css";
 import Timer from "./components/Timer";
 import Trivia from "./components/Trivia";
@@ -9,160 +10,161 @@ const App = () => {
   const [questionNumber, setQuestionNumber] = useState(1); // savol raqami
   const [stop, setStop] = useState(false); // javob hato bo'lsa uni to'xtatish uchun
   const [earned, setEarned] = useState("$ 0"); // ega bo;lgan summasi
+  const [data, setData] = useState([]);
 
   // local  baza savollar va javoblar uchun
-  const data = [
-    {
-      id: 1,
-      question: "Savol 1",
-      answers: [
-        { text: "Javob a", correct: false },
-        { text: "Javob b", correct: false },
-        { text: "Javob c", correct: false },
-        { text: "Javob d", correct: true },
-      ],
-    },
-    {
-      id: 2,
-      question: "Savol 2",
-      answers: [
-        { text: "Javob a", correct: false },
-        { text: "Javob b", correct: false },
-        { text: "Javob c", correct: false },
-        { text: "Javob d", correct: true },
-      ],
-    },
-    {
-      id: 3,
-      question: "Savol 3",
-      answers: [
-        { text: "Javob a", correct: false },
-        { text: "Javob b", correct: false },
-        { text: "Javob c", correct: false },
-        { text: "Javob d", correct: true },
-      ],
-    },
-    {
-      id: 4,
-      question: "Savol 4",
-      answers: [
-        { text: "Javob a", correct: false },
-        { text: "Javob b", correct: false },
-        { text: "Javob c", correct: false },
-        { text: "Javob d", correct: true },
-      ],
-    },
-    {
-      id: 5,
-      question: "Savol 5",
-      answers: [
-        { text: "Javob a", correct: false },
-        { text: "Javob b", correct: false },
-        { text: "Javob c", correct: false },
-        { text: "Javob d", correct: true },
-      ],
-    },
-    {
-      id: 6,
-      question: "Savol 6",
-      answers: [
-        { text: "Javob a", correct: false },
-        { text: "Javob b", correct: false },
-        { text: "Javob c", correct: false },
-        { text: "Javob d", correct: true },
-      ],
-    },
-    {
-      id: 7,
-      question: "Savol 1",
-      answers: [
-        { text: "Javob a", correct: false },
-        { text: "Javob b", correct: false },
-        { text: "Javob c", correct: false },
-        { text: "Javob d", correct: true },
-      ],
-    },
-    {
-      id: 8,
-      question: "Savol 2",
-      answers: [
-        { text: "Javob a", correct: false },
-        { text: "Javob b", correct: false },
-        { text: "Javob c", correct: false },
-        { text: "Javob d", correct: true },
-      ],
-    },
-    {
-      id: 9,
-      question: "Savol 1",
-      answers: [
-        { text: "Javob a", correct: false },
-        { text: "Javob b", correct: false },
-        { text: "Javob c", correct: false },
-        { text: "Javob d", correct: true },
-      ],
-    },
-    {
-      id: 10,
-      question: "Savol 2",
-      answers: [
-        { text: "Javob a", correct: false },
-        { text: "Javob b", correct: false },
-        { text: "Javob c", correct: false },
-        { text: "Javob d", correct: true },
-      ],
-    },
-    {
-      id: 11,
-      question: "Savol 1",
-      answers: [
-        { text: "Javob a", correct: false },
-        { text: "Javob b", correct: false },
-        { text: "Javob c", correct: false },
-        { text: "Javob d", correct: true },
-      ],
-    },
-    {
-      id: 12,
-      question: "Savol 2",
-      answers: [
-        { text: "Javob a", correct: false },
-        { text: "Javob b", correct: false },
-        { text: "Javob c", correct: false },
-        { text: "Javob d", correct: true },
-      ],
-    },
-    {
-      id: 13,
-      question: "Savol 2",
-      answers: [
-        { text: "Javob a", correct: false },
-        { text: "Javob b", correct: false },
-        { text: "Javob c", correct: false },
-        { text: "Javob d", correct: true },
-      ],
-    },
-    {
-      id: 14,
-      question: "Savol 2",
-      answers: [
-        { text: "Javob a", correct: false },
-        { text: "Javob b", correct: false },
-        { text: "Javob c", correct: false },
-        { text: "Javob d", correct: true },
-      ],
-    },
-    {
-      id: 15,
-      question: "Savol 2",
-      answers: [
-        { text: "Javob a", correct: false },
-        { text: "Javob b", correct: false },
-        { text: "Javob c", correct: false },
-        { text: "Javob d", correct: true },
-      ],
-    },
-  ];
+  // const data = [
+  //   {
+  //     id: 1,
+  //     question: "Savol 1",
+  //     answers: [
+  //       { text: "Javob a", correct: false },
+  //       { text: "Javob b", correct: false },
+  //       { text: "Javob c", correct: false },
+  //       { text: "Javob d", correct: true },
+  //     ],
+  //   },
+  //   {
+  //     id: 2,
+  //     question: "Savol 2",
+  //     answers: [
+  //       { text: "Javob a", correct: false },
+  //       { text: "Javob b", correct: false },
+  //       { text: "Javob c", correct: false },
+  //       { text: "Javob d", correct: true },
+  //     ],
+  //   },
+  //   {
+  //     id: 3,
+  //     question: "Savol 3",
+  //     answers: [
+  //       { text: "Javob a", correct: false },
+  //       { text: "Javob b", correct: false },
+  //       { text: "Javob c", correct: false },
+  //       { text: "Javob d", correct: true },
+  //     ],
+  //   },
+  //   {
+  //     id: 4,
+  //     question: "Savol 4",
+  //     answers: [
+  //       { text: "Javob a", correct: false },
+  //       { text: "Javob b", correct: false },
+  //       { text: "Javob c", correct: false },
+  //       { text: "Javob d", correct: true },
+  //     ],
+  //   },
+  //   {
+  //     id: 5,
+  //     question: "Savol 5",
+  //     answers: [
+  //       { text: "Javob a", correct: false },
+  //       { text: "Javob b", correct: false },
+  //       { text: "Javob c", correct: false },
+  //       { text: "Javob d", correct: true },
+  //     ],
+  //   },
+  //   {
+  //     id: 6,
+  //     question: "Savol 6",
+  //     answers: [
+  //       { text: "Javob a", correct: false },
+  //       { text: "Javob b", correct: false },
+  //       { text: "Javob c", correct: false },
+  //       { text: "Javob d", correct: true },
+  //     ],
+  //   },
+  //   {
+  //     id: 7,
+  //     question: "Savol 1",
+  //     answers: [
+  //       { text: "Javob a", correct: false },
+  //       { text: "Javob b", correct: false },
+  //       { text: "Javob c", correct: false },
+  //       { text: "Javob d", correct: true },
+  //     ],
+  //   },
+  //   {
+  //     id: 8,
+  //     question: "Savol 2",
+  //     answers: [
+  //       { text: "Javob a", correct: false },
+  //       { text: "Javob b", correct: false },
+  //       { text: "Javob c", correct: false },
+  //       { text: "Javob d", correct: true },
+  //     ],
+  //   },
+  //   {
+  //     id: 9,
+  //     question: "Savol 1",
+  //     answers: [
+  //       { text: "Javob a", correct: false },
+  //       { text: "Javob b", correct: false },
+  //       { text: "Javob c", correct: false },
+  //       { text: "Javob d", correct: true },
+  //     ],
+  //   },
+  //   {
+  //     id: 10,
+  //     question: "Savol 2",
+  //     answers: [
+  //       { text: "Javob a", correct: false },
+  //       { text: "Javob b", correct: false },
+  //       { text: "Javob c", correct: false },
+  //       { text: "Javob d", correct: true },
+  //     ],
+  //   },
+  //   {
+  //     id: 11,
+  //     question: "Savol 1",
+  //     answers: [
+  //       { text: "Javob a", correct: false },
+  //       { text: "Javob b", correct: false },
+  //       { text: "Javob c", correct: false },
+  //       { text: "Javob d", correct: true },
+  //     ],
+  //   },
+  //   {
+  //     id: 12,
+  //     question: "Savol 2",
+  //     answers: [
+  //       { text: "Javob a", correct: false },
+  //       { text: "Javob b", correct: false },
+  //       { text: "Javob c", correct: false },
+  //       { text: "Javob d", correct: true },
+  //     ],
+  //   },
+  //   {
+  //     id: 13,
+  //     question: "Savol 2",
+  //     answers: [
+  //       { text: "Javob a", correct: false },
+  //       { text: "Javob b", correct: false },
+  //       { text: "Javob c", correct: false },
+  //       { text: "Javob d", correct: true },
+  //     ],
+  //   },
+  //   {
+  //     id: 14,
+  //     question: "Savol 2",
+  //     answers: [
+  //       { text: "Javob a", correct: false },
+  //       { text: "Javob b", correct: false },
+  //       { text: "Javob c", correct: false },
+  //       { text: "Javob d", correct: true },
+  //     ],
+  //   },
+  //   {
+  //     id: 15,
+  //     question: "Savol 2",
+  //     answers: [
+  //       { text: "Javob a", correct: false },
+  //       { text: "Javob b", correct: false },
+  //       { text: "Javob c", correct: false },
+  //       { text: "Javob d", correct: true },
+  //     ],
+  //   },
+  // ];
 
   // savollar uchun tikilgan pullar piramidasi
   const moneyPyramid = useMemo(() => [
@@ -184,11 +186,23 @@ const App = () => {
     { id: "", amount: "Victory" },
   ]);
 
+  const fetchData = async () => {
+    try {
+      const { data } = await axios.get("http://localhost:3004/dataJson");
+      setData(data);
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   useEffect(() => {
     questionNumber > 1 &&
       setEarned(moneyPyramid.find((m) => m.id === questionNumber - 1).amount);
   }, [moneyPyramid, questionNumber]);
 
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <div className="app">
       {/* tizimga kirishda username kiritish */}
