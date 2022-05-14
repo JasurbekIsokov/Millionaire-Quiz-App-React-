@@ -3,14 +3,13 @@ import useSound from "use-sound";
 import play from "../assets/play.wav";
 import correct from "../assets/correct.wav";
 import wrong from "../assets/play.wav";
+
 export default function Trivia({
   data,
   setStop,
   questionNumber,
   setQuestionNumber,
 }) {
-  const [useName, setUseName] = useState(null);
-
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [className, setClassName] = useState("answeer");
