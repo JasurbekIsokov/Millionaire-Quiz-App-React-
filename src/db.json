@@ -2,152 +2,152 @@
   "dataJson": [
     {
       "id": 1,
-      "question": "Savol 1",
+      "question": "Mark the correct answer to question 1",
       "answers": [
-        { "text": "Javob a", "correct": false },
-        { "text": "Javob b", "correct": false },
-        { "text": "Javob c", "correct": false },
-        { "text": "Javob d", "correct": true }
+        { "text": "correct", "correct": true },
+        { "text": "wrong", "correct": false },
+        { "text": "I do not know", "correct": false },
+        { "text": "approximately the same answer", "correct": false }
       ]
     },
     {
       "id": 2,
-      "question": "Savol 2",
+      "question": "SMark the correct answer to question 2",
       "answers": [
-        { "text": "Javob a", "correct": false },
-        { "text": "Javob b", "correct": false },
-        { "text": "Javob c", "correct": false },
-        { "text": "Javob d", "correct": true }
+        { "text": "correct", "correct": true },
+        { "text": "wrong", "correct": false },
+        { "text": "I do not know", "correct": false },
+        { "text": "approximately the same answer", "correct": false }
       ]
     },
     {
       "id": 3,
-      "question": "Savol 3",
+      "question": "SMark the correct answer to question 3",
       "answers": [
-        { "text": "Javob a", "correct": false },
-        { "text": "Javob b", "correct": false },
-        { "text": "Javob c", "correct": false },
-        { "text": "Javob d", "correct": true }
+        { "text": "correct", "correct": true },
+        { "text": "wrong", "correct": false },
+        { "text": "I do not know", "correct": false },
+        { "text": "approximately the same answer", "correct": false }
       ]
     },
     {
       "id": 4,
-      "question": "Savol 4",
+      "question": "SMark the correct answer to question 4",
       "answers": [
-        { "text": "Javob a", "correct": false },
-        { "text": "Javob b", "correct": false },
-        { "text": "Javob c", "correct": false },
-        { "text": "Javob d", "correct": true }
+        { "text": "correct", "correct": true },
+        { "text": "wrong", "correct": false },
+        { "text": "I do not know", "correct": false },
+        { "text": "approximately the same answer", "correct": false }
       ]
     },
     {
       "id": 5,
-      "question": "Savol 5",
+      "question": "SMark the correct answer to question 5",
       "answers": [
-        { "text": "Javob a", "correct": false },
-        { "text": "Javob b", "correct": false },
-        { "text": "Javob c", "correct": false },
-        { "text": "Javob d", "correct": true }
+        { "text": "correct", "correct": true },
+        { "text": "wrong", "correct": false },
+        { "text": "I do not know", "correct": false },
+        { "text": "approximately the same answer", "correct": false }
       ]
     },
     {
       "id": 6,
-      "question": "Savol 6",
+      "question": "SMark the correct answer to question 6",
       "answers": [
-        { "text": "Javob a", "correct": false },
-        { "text": "Javob b", "correct": false },
-        { "text": "Javob c", "correct": false },
-        { "text": "Javob d", "correct": true }
+        { "text": "correct", "correct": true },
+        { "text": "wrong", "correct": false },
+        { "text": "I do not know", "correct": false },
+        { "text": "approximately the same answer", "correct": false }
       ]
     },
     {
       "id": 7,
-      "question": "Savol 1",
+      "question": "SMark the correct answer to question 7",
       "answers": [
-        { "text": "Javob a", "correct": false },
-        { "text": "Javob b", "correct": false },
-        { "text": "Javob c", "correct": false },
-        { "text": "Javob d", "correct": true }
+        { "text": "correct", "correct": true },
+        { "text": "wrong", "correct": false },
+        { "text": "I do not know", "correct": false },
+        { "text": "approximately the same answer", "correct": false }
       ]
     },
     {
       "id": 8,
-      "question": "Savol 2",
+      "question": "SMark the correct answer to question 8",
       "answers": [
-        { "text": "Javob a", "correct": false },
-        { "text": "Javob b", "correct": false },
-        { "text": "Javob c", "correct": false },
-        { "text": "Javob d", "correct": true }
+        { "text": "correct", "correct": true },
+        { "text": "wrong", "correct": false },
+        { "text": "I do not know", "correct": false },
+        { "text": "approximately the same answer", "correct": false }
       ]
     },
     {
       "id": 9,
-      "question": "Savol 1",
+      "question": "SMark the correct answer to question 9",
       "answers": [
-        { "text": "Javob a", "correct": false },
-        { "text": "Javob b", "correct": false },
-        { "text": "Javob c", "correct": false },
-        { "text": "Javob d", "correct": true }
+        { "text": "correct", "correct": true },
+        { "text": "wrong", "correct": false },
+        { "text": "I do not know", "correct": false },
+        { "text": "approximately the same answer", "correct": false }
       ]
     },
     {
       "id": 10,
-      "question": "Savol 2",
+      "question": "SMark the correct answer to question 10",
       "answers": [
-        { "text": "Javob a", "correct": false },
-        { "text": "Javob b", "correct": false },
-        { "text": "Javob c", "correct": false },
-        { "text": "Javob d", "correct": true }
+        { "text": "correct", "correct": true },
+        { "text": "wrong", "correct": false },
+        { "text": "I do not know", "correct": false },
+        { "text": "approximately the same answer", "correct": false }
       ]
     },
     {
       "id": 11,
-      "question": "Savol 1",
+      "question": "SMark the correct answer to question 11",
       "answers": [
-        { "text": "Javob a", "correct": false },
-        { "text": "Javob b", "correct": false },
-        { "text": "Javob c", "correct": false },
-        { "text": "Javob d", "correct": true }
+        { "text": "correct", "correct": true },
+        { "text": "wrong", "correct": false },
+        { "text": "I do not know", "correct": false },
+        { "text": "approximately the same answer", "correct": false }
       ]
     },
     {
       "id": 12,
-      "question": "Savol 2",
+      "question": "SMark the correct answer to question 12",
       "answers": [
-        { "text": "Javob a", "correct": false },
-        { "text": "Javob b", "correct": false },
-        { "text": "Javob c", "correct": false },
-        { "text": "Javob d", "correct": true }
+        { "text": "correct", "correct": true },
+        { "text": "wrong", "correct": false },
+        { "text": "I do not know", "correct": false },
+        { "text": "approximately the same answer", "correct": false }
       ]
     },
     {
       "id": 13,
-      "question": "Savol 2",
+      "question": "SMark the correct answer to question 13",
       "answers": [
-        { "text": "Javob a", "correct": false },
-        { "text": "Javob b", "correct": false },
-        { "text": "Javob c", "correct": false },
-        { "text": "Javob d", "correct": true }
+        { "text": "correct", "correct": true },
+        { "text": "wrong", "correct": false },
+        { "text": "I do not know", "correct": false },
+        { "text": "approximately the same answer", "correct": false }
       ]
     },
     {
       "id": 14,
-      "question": "Savol 2",
+      "question": "SMark the correct answer to question 14",
       "answers": [
-        { "text": "Javob a", "correct": false },
-        { "text": "Javob b", "correct": false },
-        { "text": "Javob c", "correct": false },
-        { "text": "Javob d", "correct": true }
+        { "text": "correct", "correct": true },
+        { "text": "wrong", "correct": false },
+        { "text": "I do not know", "correct": false },
+        { "text": "approximately the same answer", "correct": false }
       ]
     },
     {
       "id": 15,
-      "question": "Savol 2",
+      "question": "SMark the correct answer to question 15",
       "answers": [
-        { "text": "Javob a", "correct": false },
-        { "text": "Javob b", "correct": false },
-        { "text": "Javob c", "correct": false },
-        { "text": "Javob d", "correct": true }
+        { "text": "correct", "correct": true },
+        { "text": "wrong", "correct": false },
+        { "text": "I do not know", "correct": false },
+        { "text": "approximately the same answer", "correct": false }
       ]
     }
   ]
