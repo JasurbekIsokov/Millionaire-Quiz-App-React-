@@ -6,13 +6,14 @@ export default function Start({ setUserName }) {
     inputRef.current.value && setUserName(inputRef.current.value);
   };
   return (
-    <form className="start" onSubmit={handleClick}>
+    <form className="start" onSubmit={handleClick} netlify>
       <input
         placeholder="Enter Your Name"
         className="startInput"
         ref={inputRef}
+        type={"text"}
       />
-      <button className="startbtn" onClick={handleClick}>
+      <button type="submit" className="startbtn" onClick={handleClick}>
         Start
       </button>
     </form>
