@@ -1,16 +1,16 @@
 import React, { useEffect, useMemo, useState } from "react";
 import "./app.css";
 import Timer from "./components/Timer";
-
 import Trivia from "./components/Trivia";
 import Start from "./components/Start";
 
 const App = () => {
-  const [userName, setUserName] = useState(null);
-  const [questionNumber, setQuestionNumber] = useState(1);
-  const [stop, setStop] = useState(false);
-  const [earned, setEarned] = useState("$ 0");
+  const [userName, setUserName] = useState(null); //kirishda usename uchun
+  const [questionNumber, setQuestionNumber] = useState(1); // savol raqami
+  const [stop, setStop] = useState(false); // javob hato bo'lsa uni to'xtatish uchun
+  const [earned, setEarned] = useState("$ 0"); // ega bo;lgan summasi
 
+  // local  baza savollar va javoblar uchun
   const data = [
     {
       id: 1,
@@ -164,6 +164,7 @@ const App = () => {
     },
   ];
 
+  // savollar uchun tikilgan pullar piramidasi
   const moneyPyramid = useMemo(() => [
     { id: 1, amount: "$100" },
     { id: 2, amount: "$200" },
@@ -190,24 +191,30 @@ const App = () => {
 
   return (
     <div className="app">
+      {/* tizimga kirishda username kiritish */}
       {userName ? (
         <>
           <div className="main">
             {stop ? (
-              <h1 className="endText">You earned: {earned}</h1>
+              <h1 className="endText">
+                You earned: {earned}
+              </h1> /* to'plangan pul */
             ) : (
               <>
-                {" "}
                 <div className="top">
                   <div className="timer">
+                    {/* vaqt tugasa to'xtatish uchun setStopni timerga berib yubormiz  va
+                     nechinchi savoldaligini bilish uchun questionNumber ni ham berinb yuboramiz*/}
                     <Timer setStop={setStop} questionNumber={questionNumber} />
                   </div>
                 </div>
                 <div className="bottom">
+                  {/* javobning to'g'riligini va hatoliginn tekshradi 
+                  va ularga ms ovozni qo'yadi. Savolni belgilanganligini biladi */}
                   <Trivia
-                    data={data}
-                    setStop={setStop}
-                    questionNumber={questionNumber}
+                    data={data} // local baza
+                    setStop={setStop} // javob xato bo'lsa xato
+                    questionNumber={questionNumber} // savol raqami
                     setQuestionNumber={setQuestionNumber}
                   />
                 </div>
@@ -216,6 +223,7 @@ const App = () => {
           </div>
           <div className="pyramid">
             <ul className="moneyList">
+              {/* pullar piramidasini ekranga render qilish */}
               {moneyPyramid
                 .map((n) => (
                   <li
@@ -230,12 +238,14 @@ const App = () => {
                     <span className="moneyListItemAmount">{n.amount}</span>
                   </li>
                 ))
+                // map aylanganda 1 dan boshlab 15 gacha boradi biz uni 15 dan
+                // 1 gacha chiqarish uchun reverse() qilib teskariga chiqaramiz
                 .reverse()}
             </ul>
           </div>
         </>
       ) : (
-        <Start setUserName={setUserName} />
+        <Start setUserName={setUserName} /> // tizimga kirishda username so;raladi
       )}
     </div>
   );
